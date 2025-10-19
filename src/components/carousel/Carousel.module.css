@@ -1,0 +1,186 @@
+﻿.carouselContainer {
+    width: 100%;
+    padding: 2rem 1rem;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.carouselTrack {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.carouselTrack::-webkit-scrollbar {
+    display: none;
+}
+
+.reviewCard {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.reviewCard.active {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.reviewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navButton {
+    background: linear-gradient(135deg, #2d5a8c, #3a72ae);
+    border: none;
+    width: clamp(2.5rem, 6vw, 3.5rem);
+    height: clamp(2.5rem, 6vw, 3.5rem);
+    border-radius: 50%;
+    color: white;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(58, 114, 174, 0.3);
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.navButton:hover {
+    background: linear-gradient(135deg, #2d5a8c, #4a8bc7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(58, 114, 174, 0.4);
+}
+
+.navButton:active {
+    transform: translateY(0);
+}
+
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: clamp(0.5rem, 2vw, 0.75rem);
+    height: clamp(0.5rem, 2vw, 0.75rem);
+    border-radius: 50%;
+    border: none;
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.dotActive {
+    background-color: #2d5a8c;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: #3a72ae;
+    transform: scale(1.1);
+}
+
+/* Планшеты (альбомная ориентация) */
+@media (min-width: 768px) {
+    .carouselTrack {
+        gap: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .reviewCard {
+        width: calc(50% - 1rem);
+        height: 450px;
+    }
+}
+
+/* Ноутбуки и десктопы */
+@media (min-width: 1024px) {
+    .carouselTrack {
+        gap: 2.5rem;
+    }
+
+    .reviewCard {
+        width: calc(33.333% - 1.67rem);
+        height: 500px;
+    }
+
+    .carousel {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .carouselContainer {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .carousel {
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .carouselTrack {
+        gap: 1rem;
+    }
+
+    .reviewCard {
+        height: 350px;
+        width: 100%;
+    }
+
+    .dotsContainer {
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Очень маленькие мобильные */
+@media (max-width: 360px) {
+    .carouselContainer {
+        padding: 1rem 0.25rem;
+    }
+
+    .reviewCard {
+        height: 300px;
+    }
+
+    .navButton {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.1rem;
+    }
+}

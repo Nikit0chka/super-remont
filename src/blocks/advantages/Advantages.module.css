@@ -1,0 +1,329 @@
+﻿.advantagesSection {
+    padding: 2rem 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.advantagesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+}
+
+.advantageIcon {
+    width: clamp(2.5rem, 5vw, 4rem);
+    height: clamp(2.5rem, 5vw, 4rem);
+    color: #5ca5e0;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+/* Стили для модального окна */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: slideUp 0.3s ease-out;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #64748b;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.closeButton:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность для модального окна */
+@media (max-width: 768px) {
+    .modalContent {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .closeButton {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .modalContent {
+        margin: 0.5rem;
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .modalOverlay {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalContent {
+        margin: 0.25rem;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .closeButton {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 30px;
+        height: 30px;
+        font-size: 1.125rem;
+    }
+}
+
+/* Существующие медиа-запросы */
+@media (max-width: 1440px) {
+    .advantagesContainer {
+        gap: 1.75rem;
+        padding: 0 2rem;
+    }
+}
+
+/* Ноутбуки */
+@media (max-width: 1200px) {
+    .advantagesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .advantagesSection {
+        padding: 2rem 0.5rem;
+    }
+}
+
+/* Планшеты (альбомная ориентация) */
+@media (max-width: 1024px) {
+    .advantagesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .title {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Планшеты (портретная ориентация) */
+@media (max-width: 768px) {
+    .advantagesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 0 0.5rem;
+    }
+
+    .advantagesSection {
+        padding: 1.5rem 0.25rem;
+    }
+
+    .title {
+        font-size: clamp(1.4rem, 5vw, 1.6rem);
+        margin-bottom: 1.25rem;
+    }
+
+    .buttonContainer {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Большие мобильные */
+@media (max-width: 640px) {
+    .advantagesContainer {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .advantagesSection {
+        padding: 1rem 0.125rem;
+    }
+
+    .title {
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .advantagesContainer {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .advantagesSection {
+        padding: 0.75rem 0;
+    }
+
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .advantageIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .buttonContainer {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Очень маленькие мобильные */
+@media (max-width: 360px) {
+    .advantagesContainer {
+        gap: 0.875rem;
+        padding: 0 0.25rem;
+    }
+
+    .advantagesSection {
+        padding: 0.5rem 0;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .buttonContainer {
+        padding: 0 0.25rem;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 1600px) {
+    .advantagesSection {
+        padding: 3rem 2rem;
+    }
+
+    .advantagesContainer {
+        padding: 0 4rem;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .title {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+}
+
+/* Сверхбольшие экраны */
+@media (min-width: 2000px) {
+    .advantagesSection {
+        max-width: 1800px;
+        padding: 4rem 3rem;
+    }
+
+    .advantagesContainer {
+        padding: 0 6rem;
+        gap: 3rem;
+    }
+
+    .title {
+        font-size: 2.25rem;
+        margin-bottom: 3.5rem;
+    }
+}
+
+/* Дополнительные улучшения для модального окна на больших экранах */
+@media (min-width: 1024px) {
+    .modalContent {
+        max-width: 520px;
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .modalContent {
+        max-width: 550px;
+    }
+}
+
+/* Предотвращение скролла body когда модальное окно открыто */
+body.modalOpen {
+    overflow: hidden;
+}

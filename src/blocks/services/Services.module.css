@@ -1,0 +1,198 @@
+﻿.servicesSection {
+    padding: 2rem 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.titleText {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #2c3e50;
+}
+
+.subTitleText {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: #666;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.servicesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    padding: 0 1rem;
+}
+
+.serviceIcon {
+    width: clamp(3rem, 6vw, 4rem);
+    height: clamp(3rem, 6vw, 4rem);
+    color: #5ca5e0;
+}
+
+/* Большие десктопы */
+@media (max-width: 1440px) {
+    .servicesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Ноутбуки и маленькие десктопы */
+@media (max-width: 1200px) {
+    .servicesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .servicesSection {
+        padding: 2rem 0.5rem;
+    }
+}
+
+/* Планшеты (альбомная ориентация) */
+@media (max-width: 1024px) {
+    .servicesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Планшеты (портретная ориентация) */
+@media (max-width: 768px) {
+    .servicesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .servicesSection {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .titleText {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .subTitleText {
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+    }
+}
+
+/* Большие мобильные */
+@media (max-width: 640px) {
+    .servicesContainer {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .servicesSection {
+        padding: 1rem 0.25rem;
+    }
+
+    .header {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .servicesContainer {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .servicesSection {
+        padding: 0.75rem 0.125rem;
+    }
+
+    .header {
+        margin-bottom: 1.25rem;
+        padding: 0 0.25rem;
+    }
+
+    .titleText {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .subTitleText {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    .serviceIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* Очень маленькие мобильные */
+@media (max-width: 360px) {
+    .servicesContainer {
+        gap: 0.875rem;
+        padding: 0 0.25rem;
+    }
+
+    .servicesSection {
+        padding: 0.5rem 0;
+    }
+
+    .titleText {
+        font-size: 1.3rem;
+    }
+
+    .subTitleText {
+        font-size: 0.95rem;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 1600px) {
+    .servicesSection {
+        padding: 3rem 2rem;
+    }
+
+    .servicesContainer {
+        padding: 0 4rem;
+        gap: 2.5rem;
+    }
+
+    .header {
+        margin-bottom: 4rem;
+    }
+}
+
+/* Сверхбольшие экраны */
+@media (min-width: 2000px) {
+    .servicesSection {
+        max-width: 1800px;
+        padding: 4rem 3rem;
+    }
+
+    .servicesContainer {
+        padding: 0 6rem;
+        gap: 3rem;
+    }
+}

@@ -1,0 +1,415 @@
+﻿.header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 5rem;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 1.75rem 2rem;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.leftGroup {
+    justify-self: end;
+    gap: 1.25rem;
+    display: flex;
+}
+
+.centerGroup {
+    justify-self: center;
+}
+
+.rightGroup {
+    justify-self: start;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.logo {
+    height: 5rem;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navLink {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    color: #5ca5e0;
+}
+
+/* Кнопка мобильного меню */
+.mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.mobileMenuButton:hover {
+    color: #5ca5e0;
+}
+
+/* Мобильное меню */
+.mobileMenu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 999;
+}
+
+.mobileMenuOpen {
+    height: calc(100vh - 5rem);
+}
+
+.mobileMenuContent {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.mobileNavLink {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobileNavLink:hover {
+    color: #5ca5e0;
+}
+
+.contactButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.contactButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Кнопка связи в мобильном меню */
+.mobileContactButton {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.mobileContactButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Модальное окно выбора связи */
+.contactModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modalTitle {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+}
+
+.modalSubtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+.contactOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.contactOption {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.contactOption:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.optionIcon {
+    margin-right: 15px;
+    color: #667eea;
+}
+
+.optionText {
+    flex: 1;
+}
+
+.optionTitle {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.optionDescription {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.cancelButton {
+    width: 100%;
+    background: none;
+    border: 2px solid #e0e0e0;
+    color: #666;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+}
+
+
+/* Ноутбуки */
+@media (max-width: 1200px) {
+    .navigation {
+        gap: 3rem;
+        padding: 1.75rem 1.5rem;
+    }
+
+    .navLink {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        height: 4rem;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .navigation {
+        gap: 2rem;
+        padding: 1.75rem 1rem;
+    }
+
+    .leftGroup,
+    .rightGroup {
+        gap: 1rem;
+    }
+
+    .navLink {
+        font-size: 1rem;
+    }
+}
+
+/* Переход на мобильное меню */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .leftGroup,
+    .rightGroup {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        display: block;
+        justify-self: end;
+    }
+
+    .centerGroup {
+        justify-self: start;
+    }
+
+    .logo {
+        height: 3.5rem;
+    }
+
+    .header {
+        height: 4rem;
+    }
+
+    .mobileMenu {
+        top: 4rem;
+    }
+
+    .mobileMenuOpen {
+        height: calc(100vh - 4rem);
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .navigation {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        height: 3rem;
+    }
+
+    .mobileMenuContent {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .mobileNavLink {
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
+    }
+}
+
+/* Очень маленькие мобильные */
+@media (max-width: 360px) {
+    .navigation {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .logo {
+        height: 2.5rem;
+    }
+
+    .mobileMenuContent {
+        padding: 1rem;
+    }
+
+    .mobileNavLink {
+        font-size: 1.1rem;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1600px) {
+    .navigation {
+        padding: 1.75rem 4rem;
+    }
+}
+
+/* Очень большие экраны */
+@media (min-width: 2000px) {
+    .navigation {
+        max-width: 1800px;
+        padding: 1.75rem 6rem;
+    }
+
+    .logo {
+        height: 6rem;
+    }
+}
+
+/* Плавная прокрутка для всех якорей */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Учет высоты хедера при якорной прокрутке */
+section {
+    scroll-margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 4rem;
+    }
+}

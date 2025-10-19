@@ -1,0 +1,228 @@
+﻿.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #87CEEB, #5ca5e0);
+    padding: 2rem 1rem;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.photoContainer {
+    display: grid;
+    grid-template-areas: 
+        "top top"
+        "left right";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.photoTop {
+    grid-area: top;
+    margin: 0 auto;
+    z-index: 2;
+    transform: translateY(5px);
+}
+
+.photoLeft {
+    grid-area: left;
+    z-index: 3;
+    transform: translateX(5px) translateY(-10px);
+}
+
+.photoRight {
+    grid-area: right;
+    z-index: 1;
+    transform: translateX(-5px) translateY(-5px);
+}
+
+.photoContainer img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+.aboutTextContainer {
+    padding: 1.5rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 30rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.aboutTitleText {
+    text-align: start;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.aboutText {
+    text-align: start;
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+    line-height: 1.5;
+}
+
+/* Планшеты и маленькие ноутбуки */
+@media (max-width: 1024px) {
+    .aboutContainer {
+        padding: 2rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .photoContainer {
+        max-width: 400px;
+    }
+
+    .photoContainer img {
+        max-height: 14rem;
+    }
+}
+
+/* Большие планшеты и маленькие ноутбуки в альбомной ориентации */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .aboutContainer {
+        padding: 2rem 3rem;
+    }
+
+    .aboutTextContainer {
+        max-width: 28rem;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+    .aboutContainer {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .photoContainer {
+        max-width: 350px;
+        gap: 0.25rem;
+    }
+
+    .photoContainer img {
+        max-height: 12rem;
+    }
+
+    .photoTop {
+        transform: translateY(3px);
+    }
+
+    .photoLeft {
+        transform: translateX(3px) translateY(-5px);
+    }
+
+    .photoRight {
+        transform: translateX(-3px) translateY(-3px);
+    }
+
+    .aboutTextContainer {
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .aboutContainer {
+        padding: 1rem 0.5rem;
+        gap: 1rem;
+    }
+
+    .photoContainer {
+        max-width: 300px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photoContainer img {
+        max-height: 10rem;
+        border-width: 2px;
+    }
+
+    .aboutTextContainer {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .aboutTitleText {
+        font-size: 1.4rem;
+    }
+
+    .aboutText {
+        font-size: 0.9rem;
+    }
+}
+
+/* Очень маленькие мобильные устройства */
+@media (max-width: 360px) {
+    .aboutContainer {
+        padding: 0.75rem 0.25rem;
+    }
+
+    .photoContainer {
+        max-width: 280px;
+    }
+
+    .photoContainer img {
+        max-height: 9rem;
+    }
+
+    .aboutTextContainer {
+        padding: 0.75rem;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1440px) {
+    .aboutContainer {
+        padding: 3rem 10rem;
+        gap: 3rem;
+    }
+
+    .photoContainer {
+        max-width: 500px;
+    }
+
+    .photoContainer img {
+        max-height: 20rem;
+    }
+
+    .photoTop {
+        transform: translateY(15px);
+    }
+
+    .photoLeft {
+        transform: translateX(15px) translateY(-25px);
+    }
+
+    .photoRight {
+        transform: translateX(-15px) translateY(-15px);
+    }
+}
+
+/* Очень большие экраны */
+@media (min-width: 1920px) {
+    .aboutContainer {
+        padding: 4rem 15rem;
+    }
+
+    .photoContainer {
+        max-width: 600px;
+    }
+
+    .photoContainer img {
+        max-height: 22rem;
+    }
+}
