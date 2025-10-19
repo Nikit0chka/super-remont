@@ -29,7 +29,7 @@ function App() {
                 <Advantages/>
             </section>
 
-            <section id='advantages'>
+            <section>
                 <CustomerMisconception/>
             </section>
 
