@@ -15,6 +15,8 @@ function Footer() {
                 <div className={styles.contactContainer}>
                     <p className={styles.phoneText}>+7 987 351 77 80</p>
                     <p className={styles.text}>Москва, Видное, Юг Москвы, Московская область</p>
+                    <p className={styles.innText}>Воронцов Артемий Игоревич</p>
+                    <p className={styles.innText}>ИНН:645325866001</p>
                 </div>
             </div>
         </footer>
